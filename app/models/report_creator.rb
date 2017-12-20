@@ -5,8 +5,7 @@ class ReportCreator
   end
 
   def get_latest
-    report = Report.new(latest_weather)
-    
+    report = Report.new(latest_weather, lastest_air)
   end
 
   private
@@ -15,9 +14,13 @@ class ReportCreator
     WeatherReport.request
   end
 
+  def latest_air
+    AirReport.request
+  end
+
 end
 
-Report = Struct.new(:weather) do
+Report = Struct.new(:weather, :air_quality) do
   
   def successful? 
     weather["cod"] == 200 
@@ -33,4 +36,5 @@ Report = Struct.new(:weather) do
       "Seems nice enough"
     end
   end
+
 end
