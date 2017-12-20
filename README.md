@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Running locally
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. create an api key and set it for `open_weather_key`. One way to do this is to add it to your ~/.profile file
+1. clone the repo and cd into it locally
+1. run `bundle install`
+1. run `rails dev:cache` <- this allows you to store a cache locally
