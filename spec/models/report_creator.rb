@@ -31,7 +31,7 @@ describe 'ReportCreator', type: :model do
     end
 
     it 'returns an object that responds to .temperature' do
-
+      expect(report.temperature).to eq "Bundle up!"
     end
     
   end
@@ -42,31 +42,29 @@ describe 'ReportCreator', type: :model do
 end
 
 def successful_weather_json
-  {"coord"=>{
-      "lon"=>-76.61, 
-      "lat"=>39.29
-      }, 
+  {"coord"=>{"lon"=>-76.61, "lat"=>39.29}, 
    "weather"=>[
-     {"id"=>801, 
+     {"id"=>802, 
       "main"=>"Clouds", 
-      "description"=>"few clouds", 
-      "icon"=>"02n"}
-      ], 
-   "base"=>"stations", 
-   "main"=>{"temp"=>281.49, 
-            "pressure"=>1011, 
-            "humidity"=>53, 
-            "temp_min"=>276.15, 
-            "temp_max"=>285.15}, 
-    "wind"=>{"speed"=>4.07, "deg"=>282.501}, 
-    "clouds"=>{"all"=>20}, 
-    "dt"=>1513735560, 
+      "description"=>"scattered clouds", 
+      "icon"=>"03n"}
+    ], 
+    "base"=>"stations", 
+    "main"=>{"temp"=>46.6, 
+             "pressure"=>1011, 
+             "humidity"=>81, 
+             "temp_min"=>37.4, 
+             "temp_max"=>51.8}, 
+    "visibility"=>16093, 
+    "wind"=>{"speed"=>9.1, "deg"=>282.501}, 
+    "clouds"=>{"all"=>40}, 
+    "dt"=>1513737900, 
     "sys"=>{"type"=>1, 
-            "id"=>1316, 
-            "message"=>0.169, 
+            "id"=>1315, 
+            "message"=>0.1667, 
             "country"=>"US", 
-            "sunrise"=>1513772535, 
-            "sunset"=>1513806377}, 
+            "sunrise"=>1513772536, 
+            "sunset"=>1513806378}, 
     "id"=>4347778, 
     "name"=>"Baltimore", 
     "cod"=>200}

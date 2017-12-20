@@ -24,6 +24,13 @@ Report = Struct.new(:weather) do
   end
 
   def temperature
-
+    temp = weather["main"]["temp"]
+    if temp < 60
+      "Bundle up!"
+    elsif temp > 95
+      "Stay hydrated and move slow!" 
+    else
+      "Seems nice enough"
+    end
   end
 end

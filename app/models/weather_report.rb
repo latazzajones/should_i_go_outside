@@ -17,7 +17,7 @@ class WeatherReport
   end
 
   def uri
-    "http://api.openweathermap.org/data/2.5/weather?q=Baltimore&APPID=#{ENV['open_weather_key']}"
+    "http://api.openweathermap.org/data/2.5/weather?q=Baltimore&units=imperial&APPID=#{ENV['open_weather_key']}"
   end
 
 end
