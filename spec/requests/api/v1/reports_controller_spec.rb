@@ -13,7 +13,7 @@ describe 'Api::V1::ReportsController' do
     before { create_report_request }
 
     it 'returns the expected response' do
-      expect(json).to match({ english: "It's not so great out there",
+      expect(json).to match({ message: "It's not so great out there",
                               details: {
                                 carbon_monoxide: high, 
                                 sulfur_dioxide: low, 
