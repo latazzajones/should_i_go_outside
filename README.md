@@ -1,5 +1,9 @@
 # README
 
+This application wouldn't be possible without these two great APIs:
+https://docs.openaq.org
+https://openweathermap.org/current
+
 ## Currently this app only runs locally. To get it working in your dev environment do the following: 
 
 1. Create an api key for [OpenWeather](https://openweathermap.org/appid) if you don't have one.
