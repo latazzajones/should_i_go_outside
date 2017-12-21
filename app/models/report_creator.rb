@@ -17,13 +17,14 @@ class ReportCreator
   def latest_air
     AirReport.request
   end
-
+  
 end
 
 Report = Struct.new(:weather, :air_quality) do
 
   def successful? 
-    weather["status_code"] == 200 && air_quality["status_code"] == 200 
+    weather.delete("status_code") == 200 && 
+      air_quality.delete("status_code") == 200 
   end
 
 end

@@ -1,17 +1,13 @@
 class Api::V1::ReportsController < ApplicationController
 
-  def create
+  def index
     report = ReportCreator.get_latest
 
     if report.successful? 
-      render json: { message: report.message,
-                     details: { 
-                       temperature: report.temperature,
-                       air_quality: report.air_quality
-                      }
-                   }
+      render json: { weather: report.weather,
+                     air_quality: report.air_quality}, status: 200
     else
-      render json: { message: "Something went wrong 🙀 " }
+      render json: { message: "Something went wrong 🙀 " }, status: 404
     end
   end
 
