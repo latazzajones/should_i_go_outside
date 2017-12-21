@@ -23,8 +23,8 @@ end
 Report = Struct.new(:weather, :air_quality) do
 
   def successful? 
-    weather.delete("status_code") == 200 && 
-      air_quality.delete("status_code") == 200 
+    weather["status_code"] == 200 && 
+      air_quality["status_code"] == 200 
   end
 
 end
