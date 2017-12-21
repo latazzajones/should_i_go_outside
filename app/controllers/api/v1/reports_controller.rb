@@ -6,14 +6,13 @@ class Api::V1::ReportsController < ApplicationController
     if report.successful? 
       render json: { message: report.message,
                      details: { 
-                       carbon_monoxide: report.carbon_monoxide,
-                       sulfur_dioxide: report.sulfur_dioxide,
-                       particulate_matter_under_25: report.particulate_matter,
-                       temperature: report.temperature
+                       temperature: report.temperature,
+                       air_quality: report.air_quality
                       }
                    }
     else
-      render json: { message: "Something went wrong 🙀" }
+      render json: { message: "Something went wrong 🙀 " }
+    end
   end
 
 end

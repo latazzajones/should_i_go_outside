@@ -8,14 +8,16 @@ class AirReport
     Rails.cache.fetch "air", expires_in: 1.hour do
       json = JSON.parse air.body
 
-      measurements(json)
+      humanize(json)
     end
   end
 
   private
 
-  def measurements(json)
-    json["results"].map {|location| location["measurements"]}.flatten
+  def humanize(json)
+    measurements = json["results"].map {|location| location["measurements"]}.flatten
+
+    AirReportHumanizer.humanize(measurements)
   end
 
   def air

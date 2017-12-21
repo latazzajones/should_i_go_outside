@@ -15,10 +15,8 @@ describe 'Api::V1::ReportsController' do
     it 'returns the expected response' do
       expect(json).to match({ message: "It's not so great out there",
                               details: {
-                                carbon_monoxide: high, 
-                                sulfur_dioxide: low, 
-                                particulate_matter_under_25: medium,
-                                temperature: dangerously_cold
+                                temperature: report.temperature,
+                                air_quality: report.air_quality
                               }
                             }) 
     end
