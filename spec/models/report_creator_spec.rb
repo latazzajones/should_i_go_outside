@@ -16,11 +16,11 @@ describe 'ReportCreator', type: :model do
     end
 
     it 'returns an object that responds to .air_quality' do
-      expect(report.air_quality).to eq successful_air_json
+      expect(report.air_quality).to eq successful_air_json.except("status_code")
     end
 
     it 'returns an object that responds to .weather' do
-      expect(report.weather).to eq successful_weather_json
+      expect(report.weather).to eq successful_weather_json.except("status_code")
     end
     
   end
