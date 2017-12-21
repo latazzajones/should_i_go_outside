@@ -21,9 +21,9 @@ class ReportCreator
 end
 
 Report = Struct.new(:weather, :air_quality) do
-  
+
   def successful? 
-    weather["cod"] == 200 
+    weather["status_code"] == 200 && air_quality["status_code"] == 200 
   end
 
 end

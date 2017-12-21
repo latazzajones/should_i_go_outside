@@ -8,6 +8,7 @@ describe 'ReportCreator', type: :model do
 
     before do
       allow_any_instance_of(WeatherReport).to receive(:request).and_return(successful_weather_json)
+      allow_any_instance_of(AirReport).to receive(:request).and_return(successful_air_json)
     end
 
     it 'returns an object that responds to .successful?' do
@@ -30,10 +31,11 @@ describe 'ReportCreator', type: :model do
 end
 
 def successful_weather_json
-  {"description"=>["scattered clouds"], 
-   "temp"=>{:min=>33.8, :max=>46.4, :current_tem=>39.94}}
+  {"description"=>["clear sky"], 
+   "temp"=>{:min=>30.2, :max=>44.6, :current_tem=>35.78}, 
+   "status_code"=>200}
 end
 
 def successful_air_json
-  [{"no2"=>"safe!"}, {"o3"=>"safe!"}]
+  {"particulates"=>[{"no2"=>"safe!"}, {"o3"=>"safe!"}], "status_code"=>200}
 end

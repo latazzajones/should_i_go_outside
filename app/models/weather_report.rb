@@ -11,7 +11,7 @@ class WeatherReport
       JSON.parse weather.body
     end
 
-    weather_hash
+    weather_hash.merge("status_code"=>json['cod'])
   end
 
   private
