@@ -13,6 +13,7 @@ This application wouldn't be possible without these two great APIs:
 1. Clone this repo and cd into it locally
 1. run `bundle install`
 1. run `rails dev:cache` <- this allows you to store a cache locally
+1. run `rails s` to start your server (😉 no db needed)
 
 Once you have everything running you can test it out using curl by running the following in your console: 
 ```
