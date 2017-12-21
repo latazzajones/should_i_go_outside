@@ -7,8 +7,8 @@ describe 'ReportCreator', type: :model do
   context 'the report is created successfully' do
 
     before do
-      allow_any_instance_of(WeatherReport).to receive(:request).and_return(successful_weather_json)
-      allow_any_instance_of(AirReport).to receive(:request).and_return(successful_air_json)
+      allow(WeatherReport).to receive(:request).and_return(successful_weather_json)
+      allow(AirReport).to receive(:request).and_return(successful_air_json)
     end
 
     it 'returns an object that responds to .successful?' do
@@ -26,6 +26,14 @@ describe 'ReportCreator', type: :model do
   end
 
   context 'the report is not created successfully' do
+    before do
+      allow(WeatherReport).to receive(:request).and_return(unsuccessful_json)
+      allow(AirReport).to receive(:request).and_return(unsuccessful_json)
+    end
+
+    it 'returns an object that responds to .successful?' do
+      expect(report.successful?).to eq false
+    end
 
   end
 end
@@ -38,4 +46,8 @@ end
 
 def successful_air_json
   {"particulates"=>[{"no2"=>"safe!"}, {"o3"=>"safe!"}], "status_code"=>200}
+end
+
+def unsuccessful_json
+  {"status_code"=>404}
 end
