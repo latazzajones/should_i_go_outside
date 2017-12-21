@@ -4,7 +4,7 @@ This application wouldn't be possible without these two great APIs:
  - https://docs.openaq.org  
  - https://openweathermap.org/current
 
-## Currently this app only runs locally. To get it working in your dev environment do the following: 
+### Currently this app only runs locally. To get it working in your dev environment do the following: 
 
 1. Create an api key for [OpenWeather](https://openweathermap.org/appid) if you don't have one.
 1. Set this api key to the environment variable `open_weather_key`. 
@@ -32,11 +32,11 @@ You should get back a json response that looks something like:
 }
 ```
 
-## Endpoints
+### Endpoints
 
 Currently there is only one endpoint. And it's documented above. If more endpoints are added I'd consider adding some kind of automated documentation but given the size of this application that seems like a bit much.
 
-## Next Steps
+### Next Steps
 
 1. At the moment, this app only returns data for Baltimore. It'd be more fun if it could take a query param.
 1. The air quality api that I'm using has a TON of param options for the types of particulates it measures. It'd be great to add analysis of at least a few more. 
